@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Pekerjaan Harian YM East Garage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Update Pekerjaan Harian YM East Garage</h1>
+
+    <!-- Form untuk menambah pekerjaan baru -->
+    <form id="addJobForm">
+        <label for="job-type">Jenis Pekerjaan:</label>
+        <select id="job-type" required>
+            <option value="Custom Lampu">Custom Lampu</option>
+            <option value="Custom Audio">Custom Audio</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Lainnya">Lainnya</option>
+        </select>
+        <input type="text" id="job-type-other" placeholder="Jenis pekerjaan lainnya" style="display:none;">
+
+        <label for="vehicle-type">Jenis Kendaraan:</label>
+        <input type="text" id="vehicle-type" required>
+
+        <label for="job-date">Tanggal:</label>
+        <input type="date" id="job-date" required>
+
+        <label for="target-time">Target Selesai (Jam):</label>
+        <select id="target-time" required>
+            <option value="">-</option>
+        </select>
+
+        <label for="job-status">Status:</label>
+        <select id="job-status" required>
+            <option value="Belum Mulai">Belum Mulai</option>
+            <option value="Sedang Dikerjakan">Sedang Dikerjakan</option>
+            <option value="Selesai">Selesai</option>
+            <option value="Sudah di Video">Sudah di Video</option>
+        </select>
+
+        <label for="videographer">Videografer:</label>
+        <input type="text" id="videographer">
+
+        <button type="submit">Tambah Pekerjaan</button>
+    </form>
+
+    <!-- Tabel pekerjaan -->
+    <table>
+        <thead>
+            <tr>
+                <th>Jenis Pekerjaan</th>
+                <th>Jenis Kendaraan</th>
+                <th>Tanggal</th>
+                <th>Target Selesai (Jam)</th>
+                <th>Jam Realisasi</th>
+                <th>Status</th>
+                <th>Videografer</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="job-list"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
