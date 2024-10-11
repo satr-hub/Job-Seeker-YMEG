@@ -124,3 +124,13 @@ function copyJob(index) {
 
 // Load jobs on page load
 loadJobs();
+
+document.getElementById('export-btn').addEventListener('click', function() {
+    // Ambil data dari tabel
+    let table = document.getElementsByTagName('table')[0]; // Ambil tabel pertama
+    let workbook = XLSX.utils.table_to_book(table, {sheet: "Sheet1"}); // Konversi tabel ke format workbook (Excel)
+
+    // Ekspor workbook ke file Excel
+    XLSX.writeFile(workbook, 'update_pekerjaan_harian.xlsx');
+});
+
